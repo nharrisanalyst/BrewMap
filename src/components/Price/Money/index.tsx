@@ -13,7 +13,7 @@ export function Money({price}:MoneyProps){
     
 
     return(
-       <div>
+       <div className='font-black text-base'>
         <sup>{t('money')}</sup><span>{formatPrice(price)}</span>
        </div>
     )
