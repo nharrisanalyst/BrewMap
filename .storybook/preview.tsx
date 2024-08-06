@@ -2,7 +2,7 @@ import React from 'react';
 import type { Preview } from "@storybook/react";
 import { I18nextProvider } from "react-i18next";
 import 'tailwindcss/tailwind.css'
-import i18n from '../src/i18n/config.ts';
+import i18n from '../src/i18n/config.js';
 
  
 // Wrap your stories in the I18nextProvider component

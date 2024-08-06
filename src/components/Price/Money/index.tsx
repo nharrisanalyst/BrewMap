@@ -1,4 +1,7 @@
 import { useTranslation } from 'react-i18next';
+import { formatPrice } from './utils';
+
+
 
 type MoneyProps = {
     price:number;
@@ -7,9 +10,7 @@ type MoneyProps = {
 export function Money({price}:MoneyProps){
     const { t, i18n } = useTranslation();
     
-    function formatPrice(price:number):string{
-        return price.toPrecision(3).toString();
-    }
+    
 
     return(
        <div>
