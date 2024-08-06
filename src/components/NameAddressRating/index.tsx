@@ -1,4 +1,5 @@
 import StarRatings from 'react-star-ratings';
+import {formatAddress} from "./utils";
 
 type NameAdressRatingProps ={
     name:string;
@@ -10,19 +11,21 @@ type NameAdressRatingProps ={
 
 export function NameAddressRating({name,rating,ratings,address}:NameAdressRatingProps){
        return(
-        <div>
-        <h4>{name}</h4>
+        <div className="text-sm">
+        <h3 className='font-bold'>{name}</h3>
         {ratings && rating?(
-                <div>
+                <div className="flex flex-row gap-1 leading-5">
                     <StarRatings
                     rating={rating}
+                    starDimension="0.875rem"
+                    starRatedColor="#ffd700"
                     />
-                    <div className="">({ratings})</div>
+                    <div className="text-xs self-end">({ratings})</div>
                 </div>
             ):null
         }
         <div>
-            {address}
+            {formatAddress(address)}
         </div>
         </div>
     )
