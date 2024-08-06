@@ -1,15 +1,19 @@
+import { Money } from './Money';
 
 
+type PriceProps = {
+    price:number;
+    menuItem:string;
+    reporter?:string;
+}
 
 
-
-
-export function Price({name,price, reporter}:PriceProps){
+export function Price({menuItem, price, reporter='BrewMapData'}:PriceProps){
 
     return(
            <div className="flex">
-            <div>{price}</div>
-            <div>{name}</div>
+            <Money price={price} />
+            <div>{menuItem}</div>
             <div>{reporter}</div>
 
 
