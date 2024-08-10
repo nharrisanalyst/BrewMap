@@ -1,7 +1,7 @@
 import StarRatings from 'react-star-ratings';
 import {formatAddress} from "./utils";
 
-type NameAdressRatingProps ={
+export type NameAddressRatingProps ={
     name:string;
     rating?:number;
     ratings?:number;
@@ -9,7 +9,7 @@ type NameAdressRatingProps ={
 }
 
 
-export function NameAddressRating({name,rating,ratings,address}:NameAdressRatingProps){
+export function NameAddressRating({name,rating,ratings,address}:NameAddressRatingProps):JSX.Element{
        return(
         <div className="text-sm">
         <h3 className='font-bold'>{name}</h3>

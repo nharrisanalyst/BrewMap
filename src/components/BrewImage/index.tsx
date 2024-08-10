@@ -2,12 +2,12 @@ import type { ComponentProps } from "react";
 import { Image } from "@unpic/react";
 
 
-type BrewImageProps = {
+export type BrewImageProps = {
     alt:string;
     src:string;
-    height:number;
-    width:number;
-    layout:ComponentProps<typeof Image>["layout"];
+    height?:number;
+    width?:number;
+    layout?:ComponentProps<typeof Image>["layout"];
 }
 
 

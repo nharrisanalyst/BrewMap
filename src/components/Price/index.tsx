@@ -1,14 +1,14 @@
 import { Money } from './Money';
 
 
-type PriceProps = {
+export type PriceProps = {
     price:number;
     menuItem:string;
     reporter?:string;
 }
 
 
-export function Price({menuItem, price, reporter='BrewMapData'}:PriceProps){
+export function Price({menuItem, price, reporter='BrewMapData'}:PriceProps):JSX.Element{
 
     return(
            <div className="flex flex-col items-center ">
