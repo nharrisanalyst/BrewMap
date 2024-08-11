@@ -1,4 +1,5 @@
 import StarRatings from 'react-star-ratings';
+import { Distance } from '../Distance';
 import {formatAddress} from "./utils";
 
 export type NameAddressRatingProps ={
@@ -11,8 +12,13 @@ export type NameAddressRatingProps ={
 
 export function NameAddressRating({name,rating,ratings,address}:NameAddressRatingProps):JSX.Element{
        return(
-        <div className="text-sm">
-        <h3 className='font-bold'>{name}</h3>
+        <div className="text-sm w-full">
+        <div className="inline-flex items-center w-full">
+            <h3 className='font-bold'>{name}</h3>
+            <div className='flex justify-end flex-grow mr-1'>
+            <Distance miles={0.567} />
+            </div>
+        </div>
         {ratings && rating?(
                 <div className="flex flex-row gap-1 leading-5">
                     <StarRatings

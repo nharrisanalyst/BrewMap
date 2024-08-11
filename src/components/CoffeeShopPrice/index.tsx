@@ -14,7 +14,7 @@ export type CoffeeShopPriceProps ={
 
 export function CoffeeShopPrice ({ImageProps, NameAddressRatingsProps,DistanceProps, PriceProps}:CoffeeShopPriceProps):JSX.Element{
     return(
-        <div className='flex flex-nowrap max-w-lg w-full'>
+        <div className='flex flex-nowrap max-w-sm w-full'>
             <div className="w-[45px] flex items-center">
             <BrewImage
                 alt={ImageProps.alt}
@@ -27,7 +27,7 @@ export function CoffeeShopPrice ({ImageProps, NameAddressRatingsProps,DistancePr
                 address={NameAddressRatingsProps.address}
             />
             </div>
-            <div className="w-1/4 flex items-center">
+            <div className="w-1/4 flex items-center border-black justify-end">
             <Price
                 price={PriceProps.price}
                 menuItem={PriceProps.menuItem}

@@ -11,7 +11,7 @@ export function Money({price}:MoneyProps):JSX.Element{
     const { t } = useTranslation();
     
     return(
-       <div className='font-black text-base'>
+       <div className='font-bold text-base'>
         <sup>{t('money')}</sup><span>{formatPrice(price)}</span>
        </div>
     )
