@@ -12,7 +12,7 @@ export type CoffeeShopPriceProps ={
 }
 
 
-export function CoffeeShopPrice ({ImageProps, NameAddressRatingsProps,DistanceProps, PriceProps}:CoffeeShopPriceProps):JSX.Element{
+export function CoffeeShopPrice ({ImageProps, NameAddressRatingsProps, PriceProps}:CoffeeShopPriceProps):JSX.Element{
     return(
         <div className='flex flex-nowrap max-w-sm w-full'>
             <div className="w-[45px] flex items-center">
@@ -25,6 +25,9 @@ export function CoffeeShopPrice ({ImageProps, NameAddressRatingsProps,DistancePr
             <NameAddressRating
                 name={NameAddressRatingsProps.name}
                 address={NameAddressRatingsProps.address}
+                miles={NameAddressRatingsProps.miles}
+                ratings={NameAddressRatingsProps?.ratings}
+                rating={NameAddressRatingsProps?.rating}
             />
             </div>
             <div className="w-1/4 flex items-center border-black justify-end">

@@ -12,9 +12,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
-  args: {
+
+export const args = {
     ImageProps:{
         src:'https://i.natgeofe.com/n/4cebbf38-5df4-4ed0-864a-4ebeb64d33a4/NationalGeographic_1468962_3x4.jpg',
         alt:'A picture of a Orange Cat'
@@ -22,6 +21,7 @@ export const Primary: Story = {
     NameAddressRatingsProps:{
         name:'Shady Coffee & Tea',
         address:'325 Douglas Blvd, Roseville, CA 95678',
+        miles:0.56
     },
     DistanceProps:{
         miles: .5678
@@ -30,8 +30,13 @@ export const Primary: Story = {
         price:5,
         menuItem:'Latte',
         reporter:'BrewMapData'
+        
     }
-  },
+  }
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Primary: Story = {
+  args:args,
 };
 
 export const WithRating: Story = {
@@ -44,7 +49,8 @@ export const WithRating: Story = {
           name:'Shady Coffee & Tea',
           address:'325 Douglas Blvd, Roseville, CA 95678',
           rating:3.5,
-          ratings:13
+          ratings:13,
+          miles:0.56
       },
       DistanceProps:{
           miles: .5678
