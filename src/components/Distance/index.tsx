@@ -11,7 +11,7 @@ export function Distance({miles}:MilesProps):JSX.Element{
     }
     
     return (
-        <div className="bg-slate-200 text-xs w-[50px] h-4 flex items-center justify-center rounded-lg font-thin">
+        <div className="bg-slate-200 text-tiny w-[45px] h-4 flex items-center justify-center rounded-lg font-thin">
             {formatMiles(miles) + " " + "mi"}
         </div>
     )

@@ -13,7 +13,7 @@ export type BrewImageProps = {
 
 export function BrewImage({src, alt, height=100, width=100, layout="constrained"}:BrewImageProps){
     return( 
-    <div className="w-[45px] h-[45px] rounded-full border-sky-950 border">
+    <div className="w-[35px] h-[35px] rounded-full border-sky-950 border">
         <Image 
         src={src}
         layout={layout}
