@@ -17,6 +17,7 @@ export const Primary: Story = {
   args: {
     name:'Shady Coffee & Tea',
     address:'325 Douglas Blvd, Roseville, CA 95678',
+    miles:0.56
   },
 };
 
@@ -25,7 +26,8 @@ export const  WithRatings:Story ={
       name:'Shady Coffee & Tea',
       address:'325 Douglas Blvd, Roseville, CA 95678',
       rating:3.5,
-      ratings:13
+      ratings:13,
+      miles:0.56
     }
 }
 
