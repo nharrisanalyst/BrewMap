@@ -23,6 +23,6 @@ export const Primary: Story = {
   args:{data:data.args_1} as PirceAddressListProps,
 };
 
-// export const WithRating: Story = {
-//     args: args_rating
-//   };
+export const WithRating: Story = {
+    args: {data:data.args_2} as PirceAddressListProps,
+  };
