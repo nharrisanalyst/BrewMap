@@ -16,6 +16,7 @@
     "@reduxjs/toolkit": "^2.2.7",
     "@types/react-star-ratings": "^2.3.3",
     "@unpic/react": "^0.1.14",
+    "axios": "^1.7.3",
     "i18next": "^23.12.2",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.5.2",

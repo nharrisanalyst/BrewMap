@@ -1,15 +1,15 @@
 import { http, HttpResponse } from 'msw'
 import {CoffeeShopPriceProps} from '../components/CoffeeShopPrice'
-import data from '../List/PriceAddressList/priceAddressList.json'
+import data from '../list/PriceAddressList/priceAddressList.json'
+import {LocationType} from '../Suspense/LoadCoffeeList/utils/locations'
 
 // coffeelist params interface
-interface CoffeeListParams{
+interface CoffeeListParams {
 
 }
 
-interface GetCoffeeLocationsListRequestBody {
-    lat:number;
-    long:number;
+interface GetCoffeeLocationsListRequestBody extends LocationType {
+    
 }
 
 interface GetCoffeeLocationsListResponseBody{
