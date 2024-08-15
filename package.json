@@ -63,5 +63,10 @@
     "workerDirectory": [
       "public"
     ]
+  },
+  "vitest":{
+    "setupFiles": [
+      "./src/test/utils/setup.js"
+    ]
   }
 }

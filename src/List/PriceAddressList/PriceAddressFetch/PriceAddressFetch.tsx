@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
-import { PriceAddressList } from '.'
-import { CoffeeShopPriceProps } from '../../components/CoffeeShopPrice'
-import { getLocation, LocationType } from './utils/locations'
+import { PriceAddressList } from '..'
+import { CoffeeShopPriceProps } from '../../../components/CoffeeShopPrice'
+import { getLocation, LocationType } from '../utils/locations'
 import axios, { AxiosResponse } from 'axios'
 
 type PAFResponseType  ={
