@@ -2,8 +2,8 @@
 
 
 export interface LocationType {
-    lat:number;
-    long:number;
+    "lat":number;
+    "long":number;
 
 }
 
@@ -15,8 +15,8 @@ const getCoords = async ():Promise<LocationType> => {
     });
 
     return {
-      long: pos.coords.longitude,
-      lat: pos.coords.latitude,
+      "long": pos.coords.longitude,
+      "lat": pos.coords.latitude
     };
 };
 
