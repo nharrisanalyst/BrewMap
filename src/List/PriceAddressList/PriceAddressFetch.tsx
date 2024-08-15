@@ -10,13 +10,12 @@ type PAFResponseType  ={
 
 export  function PriceAddressFetch():JSX.Element{
    const [data, setData] = useState<CoffeeShopPriceProps[]>([]) 
-   const [isLoading, setIsLoading] =useState<boolean>(true);
+   const [status, setStatus] = useState<'isError'|'isLoading'|'success'|'idle'>('idle')
    useEffect(()=>{
+      setStatus('isLoading');
       const fetchData = async() =>{
         try{
             const latLong:LocationType = await getLocation();
-
-            console.log('just more useless troubleshooting', latLong)
             const response: AxiosResponse<PAFResponseType>  = await axios.get('/list',{
                 headers:{
                     'content-type': 'application/json'
@@ -27,23 +26,31 @@ export  function PriceAddressFetch():JSX.Element{
             });
            
             setData(response.data.coffeedata);
-            setIsLoading(false);
+            setStatus('success');
         }catch(error){
-            setIsLoading(true);
+            setStatus('isError');
         }
     }
     fetchData(); 
    },[])
-   return (isLoading?(<LoadingCoffeList />):(<PriceAddressList data={data} />))
+
+   if(status =='isLoading'){
+    return <LoadingCoffeList text={'Fetching Coffee Locations...'} />
+   }
+   if(status =='isError'){
+    return <LoadingCoffeList text={'There was an Error Fetching Coffee Locations'} />
+   }
+   
+   return(<PriceAddressList data={data} />)
 
 }
 
 
 
-export function LoadingCoffeList():JSX.Element{
+export function LoadingCoffeList({text}:{text:string}):JSX.Element{
     return(
         <div className="rounded-t-lg max-w-sm overflow-scroll max-h-full border-t-2 border-l-2 border-r-2 border-gray-200 p-3 h-16">
-            Fetching Coffee Locations...
+            {text}
         </div>
     )
 }
