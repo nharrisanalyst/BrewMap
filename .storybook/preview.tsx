@@ -1,8 +1,11 @@
 import React from 'react';
+import { initialize, mswLoader } from 'msw-storybook-addon'
 import type { Preview } from "@storybook/react";
 import { I18nextProvider } from "react-i18next";
 import 'tailwindcss/tailwind.css'
 import i18n from '../src/i18n/config.js';
+
+//initialize mswLoader
 
  
 // Wrap your stories in the I18nextProvider component
@@ -22,6 +25,10 @@ const withI18next = (Story) => {
 export const decorators = [withI18next];
 
 const preview: Preview = {
+  //initialize mswLoader
+  beforeAll: async() => {
+    await initialize();
+  },
   parameters: {
     controls: {
       matchers: {
@@ -30,5 +37,7 @@ const preview: Preview = {
       },
     },
   },
+  loaders: [mswLoader],
 };
 
+export default preview

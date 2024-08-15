@@ -1,6 +1,5 @@
 // Imports
 import { render, screen } from '@testing-library/react';
-import { ProviderWrapper } from './test/wrapper';
 
 // To Test
 import App from './App';
@@ -9,8 +8,8 @@ import App from './App';
 describe('Renders main page correctly', async () => {
     it('Should render the page correctly', async () => {
         // Setup
-        render(<App />, {wrapper: ProviderWrapper});
-        const h1 = await screen.queryByText('Vite + React + $');
+        render(<App />);
+        const h1 = await screen.queryByText(/hello world/i);
 
         // Expectations
         expect(h1).not.toBeNull();

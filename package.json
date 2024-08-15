@@ -16,6 +16,7 @@
     "@reduxjs/toolkit": "^2.2.7",
     "@types/react-star-ratings": "^2.3.3",
     "@unpic/react": "^0.1.14",
+    "axios": "^1.7.3",
     "i18next": "^23.12.2",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.5.2",
@@ -49,11 +50,24 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "eslint-plugin-storybook": "^0.8.0",
     "jsdom": "^24.1.1",
+    "msw": "^2.3.5",
+    "msw-storybook-addon": "^2.0.3",
     "postcss": "^8.4.40",
     "storybook": "8.2.6",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.2.2",
     "vite": "^5.3.4",
-    "vitest": "^2.0.5"
+    "vitest": "^2.0.5",
+    "vitest-mock-extended": "^2.0.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
+  "vitest": {
+    "setupFiles": [
+      "./src/test/utils/setup.js"
+    ]
   }
 }
