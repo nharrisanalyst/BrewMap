@@ -57,14 +57,15 @@
     "tailwindcss": "^3.4.7",
     "typescript": "^5.2.2",
     "vite": "^5.3.4",
-    "vitest": "^2.0.5"
+    "vitest": "^2.0.5",
+    "vitest-mock-extended": "^2.0.0"
   },
   "msw": {
     "workerDirectory": [
       "public"
     ]
   },
-  "vitest":{
+  "vitest": {
     "setupFiles": [
       "./src/test/utils/setup.js"
     ]

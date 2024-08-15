@@ -138,6 +138,9 @@ importers:
       vitest:
         specifier: ^2.0.5
         version: 2.0.5(@types/node@22.2.0)(jsdom@24.1.1)
+      vitest-mock-extended:
+        specifier: ^2.0.0
+        version: 2.0.0(typescript@5.5.4)(vitest@2.0.5(@types/node@22.2.0)(jsdom@24.1.1))
 
 packages:
 
@@ -3727,6 +3730,14 @@ packages:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
     engines: {node: '>=6.10'}
 
+  ts-essentials@10.0.2:
+    resolution: {integrity: sha512-Xwag0TULqriaugXqVdDiGZ5wuZpqABZlpwQ2Ho4GDyiu/R2Xjkp/9+zcFxL7uzeLl/QCPrflnvpVYyS3ouT7Zw==}
+    peerDependencies:
+      typescript: '>=4.5.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
@@ -3917,6 +3928,12 @@ packages:
         optional: true
       terser:
         optional: true
+
+  vitest-mock-extended@2.0.0:
+    resolution: {integrity: sha512-iDV40gSKlN5RZRSfpOv5SKTdEeBvu4VMpLNNakDSHMWnUmnlfsEVGXHndWAfUD+nZBR+HDcQw7p/JO5sCWo1VQ==}
+    peerDependencies:
+      typescript: 3.x || 4.x || 5.x
+      vitest: '>=2.0.0'
 
   vitest@2.0.5:
     resolution: {integrity: sha512-8GUxONfauuIdeSl5f9GTgVEpg5BTOlplET4WEDaeY2QBiN8wSm68vxN/tb5z405OwppfoCavnwXafiaYBC/xOA==}
@@ -8072,6 +8089,10 @@ snapshots:
 
   ts-dedent@2.2.0: {}
 
+  ts-essentials@10.0.2(typescript@5.5.4):
+    optionalDependencies:
+      typescript: 5.5.4
+
   ts-interface-checker@0.1.13: {}
 
   tsconfig-paths@4.2.0:
@@ -8229,6 +8250,12 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.2.0
       fsevents: 2.3.3
+
+  vitest-mock-extended@2.0.0(typescript@5.5.4)(vitest@2.0.5(@types/node@22.2.0)(jsdom@24.1.1)):
+    dependencies:
+      ts-essentials: 10.0.2(typescript@5.5.4)
+      typescript: 5.5.4
+      vitest: 2.0.5(@types/node@22.2.0)(jsdom@24.1.1)
 
   vitest@2.0.5(@types/node@22.2.0)(jsdom@24.1.1):
     dependencies:

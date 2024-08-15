@@ -3,15 +3,28 @@ import { startServer } from './test-utils'
 import '@testing-library/jest-dom';
 import { beforeAll, afterEach,  afterAll} from 'vitest';
 import { cleanup } from '@testing-library/react';
+import { mock } from 'vitest-mock-extended'
 import { vi } from 'vitest'
 
+global.navigator = { geolocation: {
+  getCurrentPosition: ()=>{}
+} }
 
-vi.mock('Geolocation', () => {
-    return {
-      getCurrentPosition: vi.fn(),
-      watchPosition: vi.fn(),
-    }
-  });
+vi
+  .spyOn(global.navigator.geolocation, 'getCurrentPosition')
+  .mockImplementation((success) =>
+    Promise.resolve(
+      success({
+        ...mock<GeolocationPosition>(),
+        coords: {
+          ...mock<GeolocationCoordinates>(),
+          latitude: 51.1,
+          longitude: 45.3,
+        },
+      }),
+    ),
+  )
+
 
 
  

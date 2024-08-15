@@ -28,6 +28,7 @@ export  function PriceAddressFetch():JSX.Element{
             setData(response.data.coffeedata);
             setStatus('success');
         }catch(error){
+            console.log('printed the main error', error);
             setStatus('isError');
         }
     }
